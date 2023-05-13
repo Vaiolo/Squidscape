@@ -134,6 +134,21 @@ public class BaseActor extends Actor {
         setWorldBounds( ba.getWidth(), ba.getHeight() );
     }
 
+    public void boundToWorld() {
+        //check left edge
+        if (getX() < 0)
+            setX(0);
+        //check right edge
+        if (getX() + getWidth() > worldBounds.width)
+            setX(worldBounds.width - getWidth());
+        //check bottom edge
+        if (getY() < 0)
+            setY(0);
+        //check top edge
+        if (getY() + getHeight() > worldBounds.height)
+            setY (worldBounds.height - getHeight());
+    }
+
     //Methods for Speed/Movement
     public void setSpeed(float speed)
     {
@@ -210,5 +225,7 @@ public class BaseActor extends Actor {
         // reset acceleration
         accelerationVec.set(0,0);
     }
+
+
 
 }
