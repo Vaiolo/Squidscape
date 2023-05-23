@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 public class Squidscape extends BaseGame{
 
-    private Actor character;
+    private Character character;
 
     public void initialize() {
 
